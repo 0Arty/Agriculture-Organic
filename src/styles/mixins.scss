@@ -1,0 +1,17 @@
+@mixin flex($jst: center) {
+  display: flex;
+  justify-content: $jst;
+  align-items: center;
+}
+
+@mixin heading() {
+  font-family: $third-family;
+  font-weight: 400;
+  font-size: 36px;
+  color: $green;
+}
+
+@mixin wrapper($width: 1400px, $mrn-top: 0px) {
+  width: $width;
+  margin: $mrn-top auto 0 auto;
+}
