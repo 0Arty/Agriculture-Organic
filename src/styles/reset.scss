@@ -28,6 +28,9 @@ button {
   outline: none;
   background: transparent;
 }
+a {
+  text-decoration: none;
+}
 
 /* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
 @media (prefers-reduced-motion: reduce) {

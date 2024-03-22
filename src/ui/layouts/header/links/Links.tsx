@@ -17,7 +17,7 @@ const Links = ({}) => {
       {routes &&
         routes.map((route, id) => {
           return (
-            <Link href={route.path} key={route.name}>
+            <Link href={route.path} key={route.name} className={style.link}>
               {route.name}
             </Link>
           )
