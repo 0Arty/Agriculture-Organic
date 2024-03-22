@@ -1,9 +1,22 @@
 .header {
-  width: 1600px;
-  margin: 0 160px;
-  height: 100px;
-  background-color: red;
+  width: 100%;
+  padding: 80px 20px;
   position: sticky;
   top: 0;
   z-index: $over-layer;
+  background-color: red;
+  @include flex(space-between);
+  .logo {
+    @include flex;
+    gap: 7.21px;
+    h1 {
+      font-size: 36px;
+    }
+  }
+  .links {
+    width: 100px;
+  }
+  .input {
+    width: 100px;
+  }
 }
