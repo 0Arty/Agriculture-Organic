@@ -1,4 +1,5 @@
 import '@/styles/global.scss'
+import Header from '@/ui/layouts/header/Header'
 
 import type { Metadata } from 'next'
 import { Roboto, Yellowtail, Open_Sans } from 'next/font/google'
@@ -36,7 +37,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={typograpy}>{children}</body>
+      <body className={typograpy}>
+        <Header />
+        {children}
+      </body>
     </html>
   )
 }
