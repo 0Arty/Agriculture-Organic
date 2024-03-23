@@ -8,14 +8,30 @@ import MenuHandler from './handlers/MenuHandler'
 import { useState } from 'react'
 
 const Header = ({}) => {
-  const [routesMenuIsOpen, sertRoutesMenuIsOpen] = useState<boolean>(false)
+  const [routesMenuIsOpen, setRoutesMenuIsOpen] = useState<boolean>(false)
+  const [shopMenuIsOpen, setShopMenuIsOpen] = useState<boolean>(false)
 
   const setRoutesMenuHandler = () => {
-    if (routesMenuIsOpen) {
-      setTimeout(() => sertRoutesMenuIsOpen(false), 301)
+    if (shopMenuIsOpen) {
+      showModal(shopMenuIsOpen, setShopMenuIsOpen)
+    }
+    setTimeout(() => {
+      showModal(routesMenuIsOpen, setRoutesMenuIsOpen)
+    }, 301)
+  }
+  const setShopMenuHandler = () => {
+    if (routesMenuIsOpen) showModal(routesMenuIsOpen, setRoutesMenuIsOpen)
+    setTimeout(() => {
+      showModal(shopMenuIsOpen, setShopMenuIsOpen)
+    }, 301)
+  }
+
+  const showModal = (menuIsOpen: boolean, setMenuIsOpen: Function) => {
+    if (menuIsOpen) {
+      setTimeout(() => setMenuIsOpen(false), 301)
       return
     } else {
-      sertRoutesMenuIsOpen(true)
+      setMenuIsOpen(true)
     }
   }
 
@@ -29,16 +45,23 @@ const Header = ({}) => {
         <Links />
       </div>
       <div className={style.responsive_container}>
-        <ShopBaskerBtn />
+        <ShopBaskerBtn togleMenu={setShopMenuHandler} />
       </div>
 
       <div className={style.icon_menu}>
-        <ShopBaskerBtn />
+        <ShopBaskerBtn togleMenu={setShopMenuHandler} />
         <MenuHandler onClickFunction={setRoutesMenuHandler} />
       </div>
 
       {routesMenuIsOpen && (
-        <Menu isOpen={routesMenuIsOpen} closeMenu={setRoutesMenuHandler} />
+        <Menu isOpen={routesMenuIsOpen} closeMenu={setRoutesMenuHandler}>
+          <h1>Routes</h1>
+        </Menu>
+      )}
+      {shopMenuIsOpen && (
+        <Menu isOpen={shopMenuIsOpen} closeMenu={setShopMenuHandler}>
+          <h1>shop</h1>
+        </Menu>
       )}
     </header>
   )

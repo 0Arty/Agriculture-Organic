@@ -2,26 +2,16 @@ import classNames from 'classnames'
 import style from './Menu.module.scss'
 import Links from './handlers/Links'
 import ShopBaskerBtn from './handlers/ShopBaskerBtn'
-import { useEffect, useRef, useState } from 'react'
+import { ReactNode, useEffect, useRef, useState } from 'react'
 
 interface IProps {
   isOpen: boolean
   closeMenu: () => void
+  children: ReactNode
 }
-const Menu = ({ isOpen, closeMenu }: IProps) => {
+const Menu = ({ isOpen, closeMenu, children }: IProps) => {
   const [isMounted, setIsMounted] = useState<boolean>(false)
-  // const [isAnimated, setIsAnimated] = useState<boolean>(false)
   const menuRef = useRef<HTMLDivElement>(null)
-
-  // useEffect(() => {
-  //   if (isOpen) {
-  //     setTimeout(() => setIsAnimated((prev) => !prev), 1)
-  //     setIsMounted((prev) => !prev)
-  //     return
-  //   }
-  //   setTimeout(() => setIsMounted((prev) => !prev), 301)
-  //   setIsAnimated((prev) => !prev)
-  // }, [isOpen
   useEffect(() => {
     setTimeout(() => {
       setIsMounted(true)
@@ -48,7 +38,9 @@ const Menu = ({ isOpen, closeMenu }: IProps) => {
         style.mobile_menu,
         isMounted ? style.active : style.closed
       )}
-    ></div>
+    >
+      {children}
+    </div>
   )
 }
 
