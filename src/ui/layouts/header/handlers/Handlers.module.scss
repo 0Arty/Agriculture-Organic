@@ -35,14 +35,14 @@
   border-radius: 33px;
   @include flex;
   gap: 12px;
-  &:hover {
-    cursor: pointer;
-    button {
-      .svg {
-        fill: $yellow;
-      }
-    }
-  }
+  // &:hover {
+  //   cursor: pointer;
+  //   button {
+  //     .svg {
+  //       fill: $yellow;
+  //     }
+  //   }
+  // }
   button {
     background: $dark-green;
     width: 56px;

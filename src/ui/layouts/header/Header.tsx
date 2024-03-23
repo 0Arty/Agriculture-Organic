@@ -8,15 +8,17 @@ import MenuHandler from './handlers/MenuHandler'
 import { useState } from 'react'
 
 const Header = ({}) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false)
-  const setMenuHandler = () => {
-    if (isOpen) {
-      setTimeout(() => setIsOpen(false), 301)
+  const [routesMenuIsOpen, sertRoutesMenuIsOpen] = useState<boolean>(false)
+
+  const setRoutesMenuHandler = () => {
+    if (routesMenuIsOpen) {
+      setTimeout(() => sertRoutesMenuIsOpen(false), 301)
       return
     } else {
-      setIsOpen(true)
+      sertRoutesMenuIsOpen(true)
     }
   }
+
   return (
     <header className={style.header}>
       <div className={style.logo}>
@@ -32,10 +34,12 @@ const Header = ({}) => {
 
       <div className={style.icon_menu}>
         <ShopBaskerBtn />
-        <MenuHandler onClickFunction={setMenuHandler} />
+        <MenuHandler onClickFunction={setRoutesMenuHandler} />
       </div>
 
-      {isOpen && <Menu isOpen={isOpen} closeMenu={setMenuHandler} />}
+      {routesMenuIsOpen && (
+        <Menu isOpen={routesMenuIsOpen} closeMenu={setRoutesMenuHandler} />
+      )}
     </header>
   )
 }
