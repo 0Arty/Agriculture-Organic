@@ -1,5 +1,5 @@
 'use client'
-import style from './Links.module.scss'
+import style from './Handlers.module.scss'
 
 import { routes } from '@/utils/constants'
 
