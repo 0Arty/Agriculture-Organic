@@ -1,5 +1,6 @@
 import '@/styles/global.scss'
 import Header from '@/ui/layouts/header/Header'
+import Providers from '@/ui/components/providers/Providers'
 
 import type { Metadata } from 'next'
 import { Roboto, Yellowtail, Open_Sans } from 'next/font/google'
@@ -36,11 +37,16 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
+    // <Provider store={store}>
     <html lang="en">
       <body className={typograpy}>
-        <Header />
-        {children}
+        <Providers>
+          <Header />
+
+          {children}
+        </Providers>
       </body>
     </html>
+    // </Provider>
   )
 }
