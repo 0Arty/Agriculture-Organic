@@ -17,11 +17,6 @@ const initialState = stateAdapter.getInitialState<iApplicationState>({
   routesModalWindowIsOpen: false,
 })
 
-const closeAllWindows = (state: iApplicationState) => {
-  state.shopModalWindowIsOpen = false
-  state.routesModalWindowIsOpen = false
-}
-
 const applicationDetails = createSlice({
   name: 'applicationDetails',
   initialState,
@@ -30,11 +25,13 @@ const applicationDetails = createSlice({
     //     state.longitude = action.payload
     //   },
     toggleShopModalWindow(state) {
-      closeAllWindows(state)
+      state.shopModalWindowIsOpen = false
+      state.routesModalWindowIsOpen = false
       state.shopModalWindowIsOpen = !state.shopModalWindowIsOpen
     },
     toggleRoutesModalWindow(state) {
-      closeAllWindows(state)
+      state.shopModalWindowIsOpen = false
+      state.routesModalWindowIsOpen = false
       state.routesModalWindowIsOpen = !state.routesModalWindowIsOpen
     },
     closeAllModalWindows(state) {

@@ -1,19 +1,20 @@
 .mobile_menu {
   position: absolute;
-  width: 300px;
-  height: 400px;
+  width: 100%;
+  min-height: 500px;
   right: 0;
-  top: 160px;
-  transform: translateX(300px);
+  top: 220px;
+  transform: translateX(100%);
   transition: all 0.3s ease;
-  background: red;
+  z-index: $over-layer;
+  // background: red;
 }
 .active {
   transition: all 0.3s ease;
   transform: translateX(0px);
 }
 .closed {
-  transform: translateX(300px);
+  transform: translateX(100%);
 }
 // .mounted {
 //   display: block;

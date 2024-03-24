@@ -10,40 +10,12 @@ import ScrolledMenu from '@/ui/components/scrolled-menu/ScrolledMenu'
 import { useAppSelector } from '@/libs/store/root'
 
 const Header = ({}) => {
-  const [routesMenuIsOpen, setRoutesMenuIsOpen] = useState<boolean>(false)
-  const [shopMenuIsOpen, setShopMenuIsOpen] = useState<boolean>(false)
-
-  // const setRoutesMenuHandler = () => {
-  //   if (shopMenuIsOpen) {
-  //     showModal(shopMenuIsOpen, setShopMenuIsOpen)
-  //   }
-  //   setTimeout(() => {
-  //     showModal(routesMenuIsOpen, setRoutesMenuIsOpen)
-  //   }, 301)
-  // }
-  // const setShopMenuHandler = () => {
-  //   if (routesMenuIsOpen) showModal(routesMenuIsOpen, setRoutesMenuIsOpen)
-  //   setTimeout(() => {
-  //     showModal(shopMenuIsOpen, setShopMenuIsOpen)
-  //   }, 301)
-  // }
-
-  // const showModal = (menuIsOpen: boolean, setMenuIsOpen: Function) => {
-  //   if (menuIsOpen) {
-  //     setTimeout(() => setMenuIsOpen(false), 301)
-  //     return
-  //   } else {
-  //     setMenuIsOpen(true)
-  //   }
-  // }
   const shopIsOpen = useAppSelector(
     (state) => state.applicationDetails.shopModalWindowIsOpen
   )
   const routesIsOpen = useAppSelector(
     (state) => state.applicationDetails.routesModalWindowIsOpen
   )
-  console.log('shopIsOpen:', shopIsOpen)
-
   return (
     <header className={style.header}>
       <div className={style.logo}>
@@ -62,24 +34,13 @@ const Header = ({}) => {
         <MenuHandler />
       </div>
 
-      <ScrolledMenu isOpen={shopIsOpen}>
+      <ScrolledMenu isOpen={shopIsOpen} styleProps={style.scrolled_menu}>
         <span>I`m shop window</span>
       </ScrolledMenu>
 
-      <ScrolledMenu isOpen={routesIsOpen}>
+      <ScrolledMenu isOpen={routesIsOpen} styleProps={style.scrolled_menu}>
         <span>I`m links window</span>
       </ScrolledMenu>
-
-      {/* {routesMenuIsOpen && (
-        <Menu isOpen={routesMenuIsOpen} closeMenu={setRoutesMenuHandler}>
-          <h1>Routes</h1>
-        </Menu>
-      )}
-      {shopMenuIsOpen && (
-        <Menu isOpen={shopMenuIsOpen} closeMenu={setShopMenuHandler}>
-          <h1>shop</h1>
-        </Menu>
-      )} */}
     </header>
   )
 }

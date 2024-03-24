@@ -9,18 +9,20 @@ import { useDispatch } from 'react-redux'
 interface IProps {
   isOpen: boolean
   children: ReactNode
+  styleProps?: string
 }
-const ScrolledMenu = ({ children, isOpen }: IProps) => {
+const ScrolledMenu = ({ children, isOpen, styleProps }: IProps) => {
   const menuRef = useRef<HTMLDivElement>(null)
   const [isMounted, setIsMounted] = useState<boolean>(false)
   const [AnimationDelay, setAnimationDelay] = useState<boolean>(false)
   const dispatch = useDispatch()
+
   useEffect(() => {
     if (isOpen) {
       setIsMounted(true)
       setTimeout(() => {
         setAnimationDelay(true)
-      }, 1)
+      }, 20)
     } else {
       setAnimationDelay(false)
       setTimeout(() => {
@@ -29,6 +31,7 @@ const ScrolledMenu = ({ children, isOpen }: IProps) => {
     }
   }, [isOpen])
 
+  //close window if click outside
   const handleClickOutside = (event: MouseEvent) => {
     if (!menuRef.current) return
     if (!menuRef.current.contains(event.target as Node)) {
@@ -43,6 +46,7 @@ const ScrolledMenu = ({ children, isOpen }: IProps) => {
     document.addEventListener('click', handleClickOutside)
     return () => document.removeEventListener('click', handleClickOutside)
   })
+  //
 
   const isOpenWindow = true
   return (
@@ -52,7 +56,8 @@ const ScrolledMenu = ({ children, isOpen }: IProps) => {
           ref={menuRef}
           className={classNames(
             style.mobile_menu,
-            AnimationDelay ? style.active : style.closed
+            AnimationDelay ? style.active : style.closed,
+            styleProps
           )}
         >
           {children}

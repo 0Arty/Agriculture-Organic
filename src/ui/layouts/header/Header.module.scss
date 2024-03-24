@@ -4,6 +4,7 @@
   position: sticky;
   top: 0;
   z-index: $over-layer;
+  background-color: #fff;
   @include flex(space-between);
   .logo {
     @include flex;
@@ -17,6 +18,9 @@
     gap: 20px;
   }
 }
+.scrolled_menu {
+  background-color: green;
+}
 
 @media screen and (0px <= width <= 900px) {
   .header {
@@ -26,6 +30,8 @@
     .icon_menu {
       display: flex;
       @include flex;
+      flex-direction: column;
+      align-items: end;
     }
   }
 }
