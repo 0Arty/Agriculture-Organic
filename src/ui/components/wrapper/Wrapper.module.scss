@@ -1,0 +1,11 @@
+.wrapper {
+  width: 1400px;
+  margin: 0px auto;
+}
+
+@media screen and (0px <= width <= 1400px) {
+  .wrapper {
+    width: 100%;
+    padding: $padding;
+  }
+}

@@ -1,6 +1,8 @@
 .header {
   width: 100%;
-  padding: 40px 20px;
+  padding: $screen-padding;
+  padding-top: 40px;
+  padding-bottom: 40px;
   position: sticky;
   top: 0;
   z-index: $over-layer;
@@ -34,4 +36,7 @@
       align-items: end;
     }
   }
+}
+
+@media screenn and (0 <= width <= 786px) {
 }
