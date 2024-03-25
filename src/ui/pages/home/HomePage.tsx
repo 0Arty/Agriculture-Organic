@@ -1,10 +1,11 @@
 import Icon from '@/ui/components/icon/Icon'
 import style from './HomePage.module.scss'
+import Banner from './banner/Banner'
 
 const HomePage = ({}) => {
   return (
     <main className={style.wrapper}>
-      <Icon name={'instagram'} width={19} height={19} />
+      <Banner />
     </main>
   )
 }

@@ -42,7 +42,6 @@ export default function RootLayout({
       <body className={typograpy}>
         <Providers>
           <Header />
-
           {children}
         </Providers>
       </body>

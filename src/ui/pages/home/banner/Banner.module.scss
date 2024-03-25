@@ -1,0 +1,19 @@
+.banner {
+  width: 100%;
+  height: 898px;
+  @include flex;
+  justify-content: flex-start;
+  .back_ground {
+    object-fit: cover;
+    position: absolute;
+    z-index: $under-layer;
+  }
+  .article {
+    width: fit-content;
+    max-width: 512px;
+    h1 {
+      text-align: left;
+      text-wrap: wrap;
+    }
+  }
+}

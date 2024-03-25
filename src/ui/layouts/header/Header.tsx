@@ -2,10 +2,8 @@
 import Icon from '@/ui/components/icon/Icon'
 import style from './Header.module.scss'
 import Links from './handlers/Links'
-import Menu from './Menu'
 import ShopBaskerBtn from './handlers/ShopBaskerBtn'
 import MenuHandler from './handlers/MenuHandler'
-import { useState } from 'react'
 import ScrolledMenu from '@/ui/components/scrolled-menu/ScrolledMenu'
 import { useAppSelector } from '@/libs/store/root'
 

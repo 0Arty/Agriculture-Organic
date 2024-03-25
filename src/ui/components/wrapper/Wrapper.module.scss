@@ -3,9 +3,16 @@
   margin: 0px auto;
 }
 
-@media screen and (0px <= width <= 1400px) {
+@media screen and (769px <= width <= 1400px) {
   .wrapper {
     width: 100%;
-    padding: $padding;
+    padding: $laptop-padding;
+  }
+}
+
+@media screen and (0px <= width <= 768px) {
+  .wrapper {
+    width: 100%;
+    padding: $mobile-padding;
   }
 }
