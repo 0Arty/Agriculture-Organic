@@ -21,13 +21,6 @@
 }
 //MenuHandler
 
-.svg {
-  stroke: $dark-green;
-  &:hover {
-    stroke: $yellow;
-    cursor: pointer;
-  }
-}
 //ShopBasketBtn
 .inputs {
   padding: 5px 23px 5px 6px;
@@ -35,22 +28,19 @@
   border-radius: 33px;
   @include flex;
   gap: 12px;
-  // &:hover {
-  //   cursor: pointer;
-  //   button {
-  //     .svg {
-  //       fill: $yellow;
-  //     }
-  //   }
-  // }
   button {
     background: $dark-green;
     width: 56px;
     height: 56px;
     border-radius: 50%;
     @include flex;
+    &:hover {
+      .svg {
+        fill: $yellow;
+      }
+    }
     .svg {
-      transition: all 0.3s ease;
+      // transition: all 0.3s ease;
       fill: white;
     }
   }

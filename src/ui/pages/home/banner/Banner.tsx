@@ -1,8 +1,13 @@
+'use client'
 import Image from 'next/image'
 import style from './Banner.module.scss'
 import Wrapper from '@/ui/components/wrapper/Wrapper'
+import Button from '@/ui/components/button/Button'
 
 const Banner = ({}) => {
+  const handleClick = () => {
+    console.log('MAKE SOMETHING WITH THIS !!')
+  }
   return (
     <section className={style.banner}>
       <Image
@@ -12,10 +17,17 @@ const Banner = ({}) => {
         className={style.back_ground}
       />
       <Wrapper>
-        <div className={style.article}>
-          <span>100% Natural Food</span>
-          <h1>Choose the best healthier way of life</h1>
-        </div>
+        <article className={style.article}>
+          <div className={style.container}>
+            <span>100% Natural Food</span>
+            <h1>Choose the best healthier way of life</h1>
+            <Button
+              type={'gold'}
+              text={'Default btn'}
+              handleClick={handleClick}
+            />
+          </div>
+        </article>
       </Wrapper>
     </section>
   )

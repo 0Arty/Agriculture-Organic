@@ -1,0 +1,7 @@
+.svg {
+  stroke: $dark-green;
+  &:hover {
+    stroke: $yellow;
+    cursor: pointer;
+  }
+}

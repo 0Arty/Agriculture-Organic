@@ -1,0 +1,38 @@
+.btn {
+  padding: 28px 39px;
+  background-color: $dark-green;
+  border-radius: 16px;
+  color: white;
+  font-family: $font-family;
+  font-weight: 700;
+  font-size: 20px;
+  .container {
+    @include flex;
+    gap: 10px;
+    .circle {
+      width: 19px;
+      height: 19px;
+      border-radius: 100%;
+      background-color: #335b6b;
+      transition: 0.3s all ease;
+      .icon {
+        stroke: white;
+      }
+    }
+  }
+  &:hover {
+    .circle {
+      transform: translateX(10px);
+    }
+  }
+}
+.gold {
+  background-color: $yellow;
+  color: #274c5b;
+}
+.white {
+  border: 1px solid #274c5b;
+  border-radius: 16px;
+  background: #fff;
+  color: #274c5b;
+}

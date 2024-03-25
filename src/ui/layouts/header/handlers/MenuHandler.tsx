@@ -1,6 +1,6 @@
 'use client'
 import Icon from '@/ui/components/icon/Icon'
-import style from './Handlers.module.scss'
+import style from './MenuHandler.module.scss'
 import { useDispatch } from 'react-redux'
 import { toggleRoutesModalWindow } from '@/libs/store/slices/applicationSlice'
 
