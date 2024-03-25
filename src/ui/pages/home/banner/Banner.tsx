@@ -23,7 +23,7 @@ const Banner = ({}) => {
             <h1>Choose the best healthier way of life</h1>
             <Button
               type={'gold'}
-              text={'Default btn'}
+              text={'Explore Now'}
               handleClick={handleClick}
             />
           </div>

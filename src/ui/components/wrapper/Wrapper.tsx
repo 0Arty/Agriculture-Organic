@@ -5,7 +5,7 @@ interface IProps {
   children: ReactNode
 }
 const Wrapper = ({ children }: IProps) => {
-  return <div className={style.wrapper}>{children}</div>
+  return <section className={style.wrapper}>{children}</section>
 }
 
 export default Wrapper
