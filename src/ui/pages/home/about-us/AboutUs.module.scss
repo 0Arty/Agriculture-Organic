@@ -1,0 +1,20 @@
+.wrapper {
+  margin-top: 190px;
+  width: 100%;
+  min-height: 1067px;
+  background: $light-gray;
+  display: flex;
+  @include flex;
+  .image_block {
+    width: 911px;
+    height: 867px;
+    position: absolute;
+    left: 100px;
+  }
+
+  .text {
+    background: red;
+    width: 700px;
+    margin-left: auto;
+  }
+}
